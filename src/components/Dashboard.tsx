@@ -12,7 +12,9 @@ import {
   Settings,
   Home,
   Menu,
-  X
+  X,
+  ChevronDown,
+  Crown
 } from 'lucide-react';
 import { useAuthStore } from '../stores/authStore';
 import { usePredictionStore } from '../stores/predictionStore';
@@ -78,6 +80,7 @@ export const sidebarFeatures = [
 export default function Dashboard({ onBack }: DashboardProps) {
   const [activeFeature, setActiveFeature] = useState<FeatureType>('overview');
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const { user, profile, signOut } = useAuthStore();
   const { loadUserPredictions, loadUserModels } = usePredictionStore();
 
@@ -108,6 +111,27 @@ export default function Dashboard({ onBack }: DashboardProps) {
   };
 
   const currentFeature = sidebarFeatures.find(f => f.id === activeFeature);
+
+  const getSubscriptionColor = (tier: string) => {
+    switch (tier) {
+      case 'enterprise':
+        return 'text-purple-400 bg-purple-400/20';
+      case 'pro':
+        return 'text-green-400 bg-green-400/20';
+      default:
+        return 'text-gray-400 bg-gray-400/20';
+    }
+  };
+
+  const getSubscriptionIcon = (tier: string) => {
+    switch (tier) {
+      case 'enterprise':
+      case 'pro':
+        return <Crown className="w-4 h-4" />;
+      default:
+        return <User className="w-4 h-4" />;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 flex">
@@ -147,18 +171,101 @@ export default function Dashboard({ onBack }: DashboardProps) {
               </div>
               
               <div className="flex items-center space-x-4">
-                {/* User Menu */}
-                <div className="flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 text-white">
-                    <User className="w-5 h-5" />
-                    <span className="text-sm">{profile?.full_name || user?.email}</span>
-                  </div>
+                {/* Profile Dropdown */}
+                <div className="relative">
                   <button
-                    onClick={signOut}
-                    className="p-2 text-gray-300 hover:text-white transition-colors"
+                    onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
+                    className="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/10 transition-colors"
                   >
-                    <LogOut className="w-5 h-5" />
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center">
+                        <User className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-white text-sm font-medium">
+                          {profile?.full_name || user?.email}
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          {getSubscriptionIcon(profile?.subscription_tier || 'free')}
+                          <span className={`text-xs px-2 py-1 rounded-full font-medium capitalize ${getSubscriptionColor(profile?.subscription_tier || 'free')}`}>
+                            {profile?.subscription_tier || 'free'}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${profileDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
+
+                  {/* Dropdown Menu */}
+                  {profileDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-64 bg-slate-900/95 backdrop-blur-sm rounded-xl border border-white/10 shadow-xl z-50">
+                      <div className="p-4 border-b border-white/10">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center">
+                            <User className="w-6 h-6 text-white" />
+                          </div>
+                          <div>
+                            <div className="text-white font-medium">
+                              {profile?.full_name || 'User'}
+                            </div>
+                            <div className="text-gray-400 text-sm">
+                              {user?.email}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="p-4 border-b border-white/10">
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-400 text-sm">Subscription</span>
+                            <div className="flex items-center space-x-2">
+                              {getSubscriptionIcon(profile?.subscription_tier || 'free')}
+                              <span className={`px-3 py-1 rounded-full text-xs font-medium capitalize ${getSubscriptionColor(profile?.subscription_tier || 'free')}`}>
+                                {profile?.subscription_tier || 'free'} Plan
+                              </span>
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-400 text-sm">API Usage</span>
+                            <span className="text-white text-sm font-medium">
+                              {profile?.api_usage_count || 0} calls
+                            </span>
+                          </div>
+
+                          {profile?.subscription_tier === 'free' && (
+                            <button className="w-full mt-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white rounded-lg text-sm font-medium transition-all duration-300">
+                              Upgrade to Pro
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="p-2">
+                        <button
+                          onClick={() => {
+                            setProfileDropdownOpen(false);
+                            // Add settings navigation here
+                          }}
+                          className="w-full flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                        >
+                          <Settings className="w-4 h-4" />
+                          <span>Settings</span>
+                        </button>
+                        <button
+                          onClick={() => {
+                            setProfileDropdownOpen(false);
+                            signOut();
+                          }}
+                          className="w-full flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors"
+                        >
+                          <LogOut className="w-4 h-4" />
+                          <span>Sign Out</span>
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -170,6 +277,14 @@ export default function Dashboard({ onBack }: DashboardProps) {
           {renderFeatureContent()}
         </div>
       </div>
+
+      {/* Click outside to close dropdown */}
+      {profileDropdownOpen && (
+        <div
+          className="fixed inset-0 z-30"
+          onClick={() => setProfileDropdownOpen(false)}
+        />
+      )}
     </div>
   );
 }

@@ -45,7 +45,7 @@ export default function Sidebar({
       </div>
 
       {/* Navigation */}
-      <nav className="p-4 space-y-2">
+      <nav className="p-4 space-y-2 flex-1">
         {features.map((feature) => {
           const IconComponent = feature.icon;
           const isActive = activeFeature === feature.id;
@@ -72,19 +72,6 @@ export default function Sidebar({
           );
         })}
       </nav>
-
-      {/* Footer */}
-      {isOpen && (
-        <div className="absolute bottom-4 left-4 right-4">
-          <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-            <div className="text-xs text-gray-400 mb-1">Subscription</div>
-            <div className="text-white font-medium capitalize">
-              {/* This would come from user profile */}
-              Free Plan
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
