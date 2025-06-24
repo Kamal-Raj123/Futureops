@@ -1,0 +1,40 @@
+# GitHub Repository Configuration
+# Update these variables to match your project details
+
+repository:
+  owner: "your-github-username"
+  name: "prediction-power-platform"
+  url: "https://github.com/your-github-username/prediction-power-platform"
+
+project:
+  name: "Prediction Power Platform"
+  description: "A comprehensive AI-powered prediction platform for weather, stocks, climate, elections, and global strategies"
+  homepage: "https://predictionpower.com"
+  demo_url: "https://demo.predictionpower.com"
+
+contact:
+  email: "support@predictionpower.com"
+  api_support: "api-support@predictionpower.com"
+  security: "security@predictionpower.com"
+  contribute: "contribute@predictionpower.com"
+  
+social:
+  twitter: "predictionpower"
+  discord: "your-discord-invite"
+  linkedin: "company/prediction-power"
+
+deployment:
+  netlify_site_id: "your-netlify-site-id"
+  production_url: "https://predictionpower.com"
+  staging_url: "https://staging.predictionpower.com"
+
+documentation:
+  docs_url: "https://docs.predictionpower.com"
+  api_docs: "https://api.predictionpower.com"
+  status_page: "https://status.predictionpower.com"
+
+branding:
+  logo_url: "https://predictionpower.com/logo.png"
+  favicon_url: "https://predictionpower.com/favicon.ico"
+  primary_color: "#06b6d4"
+  secondary_color: "#8b5cf6"
