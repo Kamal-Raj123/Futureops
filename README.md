@@ -1,7 +1,7 @@
 # 🔮 Prediction Power Platform
 
-[![CI/CD Pipeline](https://github.com/Kamal-Raj123/prediction-power-platform/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/Kamal-Raj123/prediction-power-platform/actions)
-[![CodeQL](https://github.com/Kamal-Raj123/prediction-power-platform/workflows/CodeQL/badge.svg)](https://github.com/Kamal-Raj123/prediction-power-platform/actions)
+[![CI/CD Pipeline](https://github.com/Kamal-Raj123/Futureops/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/Kamal-Raj123/Futureops/actions)
+[![CodeQL](https://github.com/Kamal-Raj123/Futureops/workflows/CodeQL/badge.svg)](https://github.com/Kamal-Raj123/Futureops/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
@@ -42,8 +42,8 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Kamal-Raj123/prediction-power-platform.git
-   cd prediction-power-platform
+   git clone https://github.com/Kamal-Raj123/Futureops.git
+   cd Futureops
    ```
 
 2. **Install dependencies**
@@ -318,8 +318,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Documentation**: [https://docs.predictionpower.com](https://docs.predictionpower.com)
 - **API Reference**: [https://api.predictionpower.com](https://api.predictionpower.com)
-- **Issues**: [GitHub Issues](https://github.com/Kamal-Raj123/prediction-power-platform/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Kamal-Raj123/prediction-power-platform/discussions)
+- **Issues**: [GitHub Issues](https://github.com/Kamal-Raj123/Futureops/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Kamal-Raj123/Futureops/discussions)
 - **Email**: techey.kamal@gmail.com
 
 ## 🔮 Roadmap
@@ -346,7 +346,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**[🌟 Star this repository](https://github.com/Kamal-Raj123/prediction-power-platform) if you find it useful!**
+**[🌟 Star this repository](https://github.com/Kamal-Raj123/Futureops) if you find it useful!**
 
 Made with ❤️ by the Prediction Power Team
 
