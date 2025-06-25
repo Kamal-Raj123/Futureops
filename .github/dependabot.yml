@@ -1,0 +1,83 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "your-github-username"
+    assignees:
+      - "your-github-username"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "automated"
+    
+    # Group updates for better management
+    groups:
+      react-ecosystem:
+        patterns:
+          - "react*"
+          - "@types/react*"
+      
+      build-tools:
+        patterns:
+          - "vite*"
+          - "@vitejs/*"
+          - "typescript"
+          - "eslint*"
+          - "prettier"
+      
+      testing:
+        patterns:
+          - "vitest*"
+          - "@testing-library/*"
+          - "jsdom"
+      
+      ui-libraries:
+        patterns:
+          - "tailwindcss"
+          - "lucide-react"
+          - "chart.js"
+          - "react-chartjs-2"
+      
+      ai-ml:
+        patterns:
+          - "@tensorflow/*"
+          - "tensorflow"
+      
+      backend:
+        patterns:
+          - "@supabase/*"
+          - "supabase"
+      
+      state-management:
+        patterns:
+          - "zustand"
+          - "react-hook-form"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "your-github-username"
+    assignees:
+      - "your-github-username"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    labels:
+      - "github-actions"
+      - "automated"
