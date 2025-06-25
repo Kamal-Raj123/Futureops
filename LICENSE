@@ -1,0 +1,70 @@
+MIT License
+
+Copyright (c) 2024 Prediction Power Platform
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Third-Party Licenses
+
+This project includes software from third parties under the following licenses:
+
+### React (MIT License)
+Copyright (c) Facebook, Inc. and its affiliates.
+
+### TensorFlow.js (Apache License 2.0)
+Copyright 2018 Google LLC. All Rights Reserved.
+
+### Supabase (Apache License 2.0)
+Copyright (c) 2020-present Supabase, Inc.
+
+### Tailwind CSS (MIT License)
+Copyright (c) Tailwind Labs, Inc.
+
+### Chart.js (MIT License)
+Copyright (c) 2014-2022 Chart.js Contributors
+
+### Lucide React (ISC License)
+Copyright (c) 2022, Lucide Contributors
+
+### Zustand (MIT License)
+Copyright (c) 2019 Paul Henschel
+
+### React Hook Form (MIT License)
+Copyright (c) 2019-present Beier(Bill) Luo
+
+### Date-fns (MIT License)
+Copyright (c) 2021 Sasha Koss and Lesha Koss
+
+For complete license texts of all dependencies, see the `node_modules\` directory or visit the respective project repositories.
+
+## Attribution
+
+This project uses icons from Lucide (https://lucide.dev) under the ISC License.
+)
+
+Stock photos and images are sourced from Pexels (https://pexels.com) under the Pexels License.
+)
+
+## Contact
+
+For licensing questions or commercial use inquiries, please contact:
+- Email: legal@predictionpower.com
+- Website: https://predictionpower.com/legal
